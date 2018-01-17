@@ -126,7 +126,7 @@ nav img {
 }
 
 
-/*---------- CARDS LAYOUT ----------*/
+/*---------- CARDS LAYOUT + media QUERIES ----------*/
 
 .centered {
     margin: 0 auto;
@@ -253,12 +253,54 @@ figure {
     /* nav{
         display: none;
     } */
+
 }
 
 
-/*MEDIA QUERIES*/
+/* ------GLOBAL MEDIA QUERIES------*/
 
-@media(max-width: 960px) {
+@media screen and (max-width: 320px){
+
+
+
+    
+    nav {
+        display:    none;
+    }
+}
+
+
+/* tablet!!!! */
+@media screen and (max-width: 960px) and (min-width: 321px){
+
+    .wrapper {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .menu-container{
+        display: none;}
+    .social-icons-sidebar {
+        position: static;
+    }
+    .crights {
+        display: none;
+    }
+    .side-nav li ul {
+        flex-direction: column;
+        display: flex;
+    }
+    .social-icons-sidebar {
+        padding: 20px;
+    }
+    .nav-bar{
+        display: none;
+    }
+}
+
+@media(max-width: 320px) {
+
+
     .wrapper {
         height: auto;
         display: flex;
@@ -349,4 +391,163 @@ input[type="submit"]:focus, input[type="submit"]:hover {
   color: #58B3AB;;
   background-color: #fff;
   border: 3px solid #58B3AB;;
+}
+/*hamburgier  */
+.nav-bar {
+  position: relative;
+  z-index: 3;
+  margin: 0;
+  min-height: 48px;
+  line-height: 48px;
+  text-align: center;
+  background-color: #58B3AB;
+}
+@media only screen and (min-width: 60em) {
+  .nav-bar {
+    display: none;
+    margin: 4em 0 0;
+    background: none;
+  }
+}
+
+.nav-bar_open nav {
+  margin: 0;
+}
+.nav-bar_open .nav-bar__menu-btn span {
+  opacity: 0;
+}
+.nav-bar_open .nav-bar__menu-btn:before {
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
+  width: 24px;
+  margin: 0;
+}
+.nav-bar_open .nav-bar__menu-btn:after {
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+  width: 24px;
+  margin: 0;
+}
+
+.nav-bar__nav {
+  width: 100%;
+  background-color: #58B3AB;
+  display: none;
+  padding: 48px 0 0;
+}
+@media only screen and (min-width: 60em) {
+  .nav-bar__nav {
+      display: none;
+    padding: 0;
+  }
+}
+@media only screen and (min-width: 60em) {
+  .nav-bar__nav {
+    display: none;
+    max-height: none !important;
+    background: none;
+  }
+  .nav-bar__menu-btn{
+      display: none;
+  }
+}
+.nav-bar__nav ul {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+}
+@media only screen and (min-width: 60em) {
+  .nav-bar__nav ul {
+    padding: 0;
+    display: none;
+  }
+}
+.nav-bar__nav ul li {
+  display: block;
+}
+@media only screen and (min-width: 60em) {
+  .nav-bar__nav ul li {
+    display: inline-block;
+  }
+}
+.nav-bar__nav ul a {
+  display: block;
+  -webkit-transition: opacity .1s linear;
+  transition: opacity .1s linear;
+  line-height: 48px;
+}
+.nav-bar__nav ul a:hover {
+  opacity: .75;
+}
+
+
+
+
+
+.nav-bar__menu-btn {
+  position: absolute;
+  z-index: 3;
+  display: inline-block;
+  right: 24px;
+  top: 0;
+  cursor: pointer;
+  -webkit-transition: background 0.15s linear, -webkit-transform 0.28s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transition: background 0.15s linear, -webkit-transform 0.28s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transition: transform 0.28s cubic-bezier(0.4, 0.2, 0.2, 1), background 0.15s linear;
+  transition: transform 0.28s cubic-bezier(0.4, 0.2, 0.2, 1), background 0.15s linear, -webkit-transform 0.28s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+@media only screen and (min-width: 60em) {
+  .nav-bar__menu-btn {
+    right: 72px;
+    display: none;
+  }
+}
+@media only screen and (min-width: 60em) {
+  button.nav-bar__menu-btn {
+    display: none;
+  }
+}
+.nav-bar__menu-btn:before, .nav-bar__menu-btn:after,
+.nav-bar__menu-btn span {
+  position: absolute;
+  display: block;
+  left: 50%;
+  top: 50%;
+  background-color: #ffffff;
+  height: 3px;
+  width: 20px;
+  -webkit-transform: translate(-50%, -50%) translateZ(0);
+          transform: translate(-50%, -50%) translateZ(0);
+  content: '';
+}
+.nav-bar__menu-btn:before {
+  margin-top: -7px;
+}
+.nav-bar__menu-btn:after {
+  margin-top: 7px;
+}
+
+
+
+
+
+nav a {
+  display: inline-block;
+  padding: 0 1.25em;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+button {
+  display: inline-block;
+  vertical-align: center;
+  width: 48px;
+  height: 48px;
+  border: none;
+  background: none;
+}
+.nav-bar_menu-btn{
+
 }
