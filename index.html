@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>portfolio
+    <title>portfolio PRZEMEK SHEMEK POCZESNY
     </title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.1.0/font-awesome-animation.min.css" />
@@ -14,12 +14,12 @@
     <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="js/responsive_navbar.js"></script>
-    <!-- <link rel="stylesheet"href="css/responsive_navbar.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/script.js"></script>
 
-</head> -->
+
+
+</head>
 
 <body>
 
@@ -123,7 +123,7 @@ Hello! My name is Przemek aka Shemek, I am a self-taught Front End Developer. Re
                             <article class="card">
                                 <a href="#">
                                     <figure class="thumbnail">
-                                        <img src="1a.png" alt="Norwegian boller">
+                                        <img src="pic/1a.png" alt="">
                                     </figure>
                                     <div class="card-content">
                                         <h2>ROCK-SISSORS-PAPER
@@ -146,7 +146,7 @@ Hello! My name is Przemek aka Shemek, I am a self-taught Front End Developer. Re
                             <article class="card">
                                 <a href="https://google.pl">
                                     <figure class="thumbnail">
-                                        <img src="2a.png" alt="Norwegian boller">
+                                        <img src="pic/2a.png" alt="">
                                     </figure>
                                     <div class="card-content">
                                         <h2>
@@ -169,7 +169,7 @@ COUNTRY SEARCH
                             <article class="card">
                                 <a href="#">
                                     <figure class="thumbnail">
-                                        <img src="3a.png" alt="A dinosaur wearing an aluminium jacket">
+                                        <img src="pic/3a.png" alt="A dinosaur wearing an aluminium jacket">
                                     </figure>
                                     <div class="card-content">
                                         <h2>RANDOM QUOTTE
@@ -186,7 +186,7 @@ COUNTRY SEARCH
                             <article class="card">
                                 <a href="#">
                                     <figure class="thumbnail">
-                                        <img src="3.png" alt="Chocolate frog on oranges">
+                                        <img src="pic/3.png" alt="">
                                     </figure>
                                     <div class="card-content">
                                         <h2>KANBAN TO-DO APP</h2>
@@ -200,7 +200,7 @@ COUNTRY SEARCH
                             <article class="card">
                                 <a href="#">
                                     <figure class="thumbnail">
-                                        <img src="5.png" alt="A whiskey jack taking a dive">
+                                        <img src="pic/5.png" alt="">
                                     </figure>
                                     <div class="card-content">
                                         <h2>LANDING-PAGE FLEXBOX</h2>
@@ -214,7 +214,7 @@ COUNTRY SEARCH
                             <article class="card">
                                 <a href="#">
                                     <figure class="thumbnail">
-                                        <img src="6.png" alt="Playing Jenga with pool cues">
+                                        <img src="pic/6.png" alt="">
                                     </figure>
                                     <div class="card-content">
                                         <h2>LANDING-PAGE FOR VET.</h2>
@@ -260,66 +260,7 @@ COUNTRY SEARCH
 
 
         </section>
-<script type="text/javascript">
-//toggle menu
-document.querySelector(".nav-bar__menu-btn").addEventListener('click', function(e){
-  e.stopPropagation();
-  document.querySelector(".nav-bar").classList.toggle('nav-bar_open');
-  toggleSlide(document.querySelector('.nav-bar__nav'));
-}, false);
 
-document.querySelector(".nav-bar__nav").addEventListener('click', function(e){
-  e.stopPropagation();
-}, false);
-
-//close menu if is's not focused
-document.addEventListener("click", function (){
-  if( document.querySelector(".nav-bar").classList.contains('nav-bar_open') ){
-     toggleSlide(document.querySelector('.nav-bar__nav'));
-     document.querySelector(".nav-bar").classList.remove('nav-bar_open');
-  }
-}, false);
-
-var getHeight = function(el) {
-  var el_style      = window.getComputedStyle(el),
-      el_display    = el_style.display,
-      el_position   = el_style.position,
-      el_visibility = el_style.visibility,
-      el_max_height = el_style.maxHeight.replace('px', '').replace('%', ''),
-      wanted_height = 0;
-  if(el_display !== 'none' && el_max_height !== '0') {
-    return el.offsetHeight;
-  }
-  el.style.position   = 'absolute';
-  el.style.visibility = 'hidden';
-  el.style.display    = 'block';
-  wanted_height     = el.offsetHeight;
-  el.style.display    = el_display;
-  el.style.position   = el_position;
-  el.style.visibility = el_visibility;
-  return wanted_height;
-};
-var toggleSlide = function(el) {
-  var el_max_height = 0;
-  if(el.getAttribute('data-max-height')) {
-    if(el.style.maxHeight.replace('px', '').replace('%', '') === '0') {
-      el.style.maxHeight = el.getAttribute('data-max-height');
-    } else {
-      el.style.maxHeight = '0';
-    }
-  } else {
-    el_max_height                  = getHeight(el) + 'px';
-    el.style['transition']         = 'max-height 0.25s cubic-bezier(.4,.2,.2,1)';
-    el.style.overflowY             = 'hidden';
-    el.style.maxHeight             = '0';
-    el.setAttribute('data-max-height', el_max_height);
-    el.style.display               = 'block';
-    setTimeout(function() {
-      el.style.maxHeight = el_max_height;
-    }, 10);
-  }
-};
-</script>
 
 
 </body>
